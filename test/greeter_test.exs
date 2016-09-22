@@ -1,6 +1,6 @@
 defmodule Skull.Greeter.Test do
     use ExUnit.Case
-    doctest Skull
+    doctest Skull.Greeter
 
     test 'for' do
         greeter = Skull.Greeter.for('Tomas', 'Hello')

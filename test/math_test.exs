@@ -1,6 +1,6 @@
 defmodule Skull.Math.Test do
   use ExUnit.Case
-  doctest Skull
+  doctest Skull.Math
 
   test 'factorial' do
     assert Skull.Math.factorial(6) == 720
