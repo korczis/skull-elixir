@@ -9,4 +9,13 @@ defmodule Skull.Math do
 
         fizzbuzz.(rem(n, 3), rem(n, 5), n)
     end
+
+    def factorial(n) do
+        factorial = fn
+            (0) -> 1
+            (n) -> n * factorial(n - 1)
+        end
+
+        factorial.(n)
+    end
 end
