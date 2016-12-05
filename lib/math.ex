@@ -18,4 +18,50 @@ defmodule Skull.Math do
 
         factorial.(n)
     end
+
+    defmacro say({:+, _, [lhs, rhs]}) do
+        quote do
+            l = unquote(lhs)
+            r = unquote(rhs)
+            res = l + r
+            IO.puts "#{l} plus #{r} is #{res}"
+            res
+        end
+    end
+
+    defmacro say({:-, _, [lhs, rhs]}) do
+        quote do
+            l = unquote(lhs)
+            r = unquote(rhs)
+            res = l - r
+            IO.puts "#{l} minus #{r} is #{res}"
+            res
+        end
+    end
+
+    defmacro say({:*, _, [lhs, rhs]}) do
+        quote do
+            l = unquote(lhs)
+            r = unquote(rhs)
+            res = l * r
+            IO.puts "#{l} multiplied by #{r} is #{res}"
+            res
+        end
+    end
+
+    defmacro say({:/, _, [lhs, rhs]}) do
+        quote do
+            l = unquote(lhs)
+            r = unquote(rhs)
+            res = l / r
+            IO.puts "#{l} divided by #{r} is #{res}"
+            res
+        end
+    end
+
+    defmacro say(exp) do
+        quote do
+            unquote(exp)
+        end
+    end
 end
